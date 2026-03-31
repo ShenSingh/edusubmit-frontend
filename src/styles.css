@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --surface-muted: #f9fbfc;
+  --line: #d6dde4;
+  --text: #16202a;
+  --text-soft: #5a6978;
+  --primary: #0b79d0;
+  --primary-dark: #095a9a;
+  --danger: #b42318;
+  --success: #117a37;
+  --radius: 12px;
+  --shadow: 0 10px 28px rgba(21, 36, 50, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top right, #e2edf8 0%, #f4f6f8 45%, #f7f9fb 100%);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a.active {
+  font-weight: 700;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 16px 42px;
+}
+
+.nav-shell {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.93);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-brand {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.nav-user-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-user-pill {
+  font-size: 0.88rem;
+  color: var(--text-soft);
+}
+
+.page-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+.page-card-header h1 {
+  margin: 0;
+}
+
+.page-card-header p {
+  margin-top: 4px;
+  color: var(--text-soft);
+}
+
+.form-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.form-split {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: var(--text-soft);
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+  background: var(--surface-muted);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: #e5eef7;
+  color: #0b2f4a;
+}
+
+.btn-secondary:hover {
+  background: #d1e3f4;
+}
+
+.form-inline {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 14px;
+}
+
+.alert {
+  margin: 10px 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.alert-error {
+  background: #fdeceb;
+  color: var(--danger);
+  border: 1px solid #f8c2bf;
+}
+
+.alert-success {
+  background: #e9f7ee;
+  color: var(--success);
+  border: 1px solid #b8e2c3;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.item-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  padding: 14px;
+}
+
+.item-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.row-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.table-shell {
+  margin-top: 12px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.section-heading {
+  margin-top: 22px;
+  margin-bottom: 8px;
+}
+
+.inline-note {
+  margin-top: 12px;
+  color: var(--text-soft);
+}
+
+.fade-in {
+  animation: fadeInUp 0.35s ease both;
+}
+
+.stagger-grid .item-card {
+  animation: fadeInUp 0.35s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-shell {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+  }
+
+  .page-card {
+    padding: 16px;
+  }
+}
